@@ -1,0 +1,14 @@
+## tomar en cuenta las tabulaciones
+## conecta el pureto del comutador con el puerto del contenedor de docker
+## ser mas detallado en la version de la imagen
+version: '3'
+services:
+  db:
+    image: mongo:5
+    restart: always
+    ports:
+      - 27017:27017
+    environment:
+      MONGODB_DATABASE: nest-pokemon
+    volumes:
+      - ./mongo:/data/db
